@@ -1,0 +1,44 @@
+/* Asegúrate de que el contenedor tenga suficiente espacio para las figuras */
+.figuras-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las figuras */
+    justify-content: center; /* Centrar las figuras horizontalmente */
+    padding: 20px; /* Espacio interior del contenedor */
+  }
+  
+  /* Estilo para cada figura */
+  .figura-item {
+    border: 1px solid #ddd; /* Borde alrededor de la tarjeta */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interior */
+    text-align: center; /* Centrar el texto */
+    background-color: #f9f9f9; /* Color de fondo */
+    width: 300px; /* Ancho fijo para cada figura */
+    height: 400px; /* Altura fija para que las imágenes tengan suficiente espacio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribuir el espacio vertical */
+  }
+  
+  /* Estilo para las imágenes de las figuras */
+  .figura-img {
+    max-width: 100%;
+    height: auto; /* Mantener la proporción de la imagen */
+    max-height: 200px; /* Altura máxima para las imágenes */
+    object-fit: cover; /* Asegurar que la imagen cubra el área asignada */
+    border-radius: 4px; /* Bordes redondeados en la imagen */
+  }
+  
+  /* Estilo para el mensaje de "no hay figuras" */
+  ng-template {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: #666;
+    font-size: 1.2rem;
+  }
+  

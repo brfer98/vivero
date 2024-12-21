@@ -1,0 +1,81 @@
+<span>
+    <img src="assets/imagenes/cabeceras/introduccion/Bienvenido a viveros uzal.png" width="100%" height="450px">
+    <div class="welcome-container">
+        <p>
+            Nos alegra que hayas llegado a nuestra página. En Viveros Uzal, somos apasionados por la naturaleza y nos dedicamos a ofrecerte las mejores plantas, árboles y productos para tu jardín. Nuestro compromiso es ayudarte a crear y mantener espacios verdes vibrantes y saludables con  calidad y belleza, con productos que capturan la esencia de la naturaleza.
+        </p>
+        <p>
+            Explora nuestra amplia variedad de plantas y descubre consejos y recursos útiles para el cuidado de tu jardín. Estamos aquí para acompañarte en cada paso de tu aventura de jardinería, transformando tu jardín en un lugar único y especial.
+        </p>
+        <p>
+            ¡Gracias por confiar en Viveros Uzal!
+        </p>
+    </div>
+</span>
+
+
+
+    <div class="container">
+
+        <!-- Sección de plantas más recientes -->
+        <div class="section plantas-temporada">
+            <h2>Nuestras Plantas de Temporada</h2>
+            <p>En esta sección, te mostramos las plantas de temporada más populares para mantener tu jardín vibrante en cualquier época del año.</p>
+            
+            <div class="plantas-container">
+                <div *ngFor="let planta of plantasTemporada" class="planta-item">
+                    <h5>{{ planta.descripcion }} - Precio: {{ planta.precio | currency }} - Stock: {{ planta.stock }}</h5>
+                    <img [src]="'assets/imagenes/temporada/' + planta.estacion + '/' + planta.foto" alt="{{ planta.descripcion }}" class="planta-img">
+                </div>
+            </div>
+        </div>
+        
+          
+
+        <!-- Sección de estatuas de piedra más vendidas -->
+        <div class="section">
+            <h2>Estatuas de Piedra Más Vendidas</h2>
+            <p>Destacamos por ofrecer estatuas de piedra que combinan arte y durabilidad. Estas piezas no solo embellecen cualquier jardín, sino que también se caracterizan por su resistencia y diseño exclusivo. A continuación, te mostramos algunas de nuestras estatuas más populares, apreciadas por su calidad y estética inigualable.</p>
+            
+            <div class="figuras-container">
+                <div *ngFor="let figura of figurasPopulares" class="figura-item">
+                    <h5>{{ figura.descripcion }} - Precio: {{ figura.precio | currency }} - Stock: {{ figura.stock }}</h5>
+                    <img [src]="'assets/imagenes/figuras/' + figura.foto"  class="figura-img">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Sección de accesorios y herramientas de jardín -->
+        <div class="section">
+            <h2>Accesorios y Herramientas de Jardín</h2>
+            <p>Además de nuestras plantas y estatuas, ofrecemos una amplia gama de herramientas y accesorios para el jardín. Desde abonos y macetas hasta herramientas especializadas, contamos con todo lo necesario para mantener tu jardín en óptimas condiciones. ¡Explora nuestra selección y encuentra los productos perfectos para tu próximo proyecto de jardinería!</p>
+            <div class="herramientas-container">
+                <div *ngFor="let herramienta of herramientasPopulares" class="herramienta-item">
+                    <h5>{{ herramienta.descripcion }} - Precio: {{ herramienta.precio | currency }} - Stock: {{ herramienta.stock }}</h5>
+                    <img [src]="'assets/imagenes/herramientas/' + herramienta.foto" class="herramienta-img">
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Texto de San Valentín que se muestra solo del 7 al 15 de febrero -->
+        <div *ngIf="mostrarSanValentin" class="san-valentin-container">
+            <h2>¡Feliz San Valentín!</h2>
+            <p>
+            En Viveros Uzal, celebramos el amor por la naturaleza y por quienes más amamos.
+            Este San Valentín, sorprende a esa persona especial con un regalo que florezca y crezca como vuestro amor. 
+            Solamente, pulsando en nuestra nueva sección especial donde podrás <a href="/personalizar-ramo">personalizar tu ramo de floras con aquellas que seleciones.</a> 
+
+            </p>
+            <a>
+                <video autoplay loop muted playsinline>
+                    <source src="assets/Diseño sin título.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </a>
+        </div>
+
+
+    </div>

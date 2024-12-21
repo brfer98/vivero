@@ -1,0 +1,17 @@
+<div *ngIf="plantas_semillas.length > 0; else noPlantasSemillas" class="plantas-semillas-container">
+    <!-- Recorrer todas las plantas de semillas y mostrar los datos -->
+    <div *ngFor="let planta of plantas_semillas" class="planta-semillas-card">
+      <h3>{{ planta.descripcion }}</h3>
+      <p><strong>Precio:</strong> ${{ planta.precio || 'N/A' }}</p>
+      <p><strong>Stock disponible:</strong> {{ planta.stock }}</p>
+  
+      <!-- Mostrar la imagen de la planta de semillas -->
+      <img [src]="'assets/imagenes/plantas/semillas/' + planta.foto" alt="{{ planta.descripcion }}" class="planta-semillas-img">
+    </div>
+  </div>
+  
+  <!-- Si no hay plantas de semillas disponibles -->
+  <ng-template #noPlantasSemillas>
+    <p class="no-plantas-semillas">No hay plantas de semillas disponibles.</p>
+  </ng-template>
+  

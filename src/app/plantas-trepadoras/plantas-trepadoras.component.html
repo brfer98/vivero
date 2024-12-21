@@ -1,0 +1,17 @@
+<div *ngIf="plantas_trepadoras.length > 0; else noPlantasTrepadoras" class="plantas-trepadoras-container">
+    <!-- Recorrer todas las plantas trepadoras y mostrar los datos -->
+    <div *ngFor="let planta of plantas_trepadoras" class="planta-trepadora-card">
+      <h3>{{ planta.descripcion }}</h3>
+      <p><strong>Precio:</strong> ${{ planta.precio || 'N/A' }}</p>
+      <p><strong>Stock disponible:</strong> {{ planta.stock }}</p>
+  
+      <!-- Mostrar la imagen de la planta trepadora -->
+      <img [src]="'assets/imagenes/plantas/trepadoras/' + planta.foto" alt="{{ planta.descripcion }}" class="planta-trepadora-img">
+    </div>
+  </div>
+  
+  <!-- Si no hay plantas trepadoras disponibles -->
+  <ng-template #noPlantasTrepadoras>
+    <p class="no-plantas-trepadoras">No hay plantas trepadoras disponibles.</p>
+  </ng-template>
+  

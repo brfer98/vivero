@@ -1,0 +1,16 @@
+<div *ngIf="suministros.length > 0; else noSuministros" class="suministros-container">
+    <!-- Recorrer todos los suministros y mostrar los datos -->
+    <div *ngFor="let suministro of suministros" class="suministro-card">
+      <h3>{{ suministro.descripcion }}</h3>
+      <p><strong>Precio:</strong> ${{ suministro.precio || 'N/A' }}</p>
+      <p><strong>Stock disponible:</strong> {{ suministro.stock }}</p>
+  
+      <!-- Mostrar la imagen del suministro -->
+      <img [src]="'assets/imagenes/suministros/' + suministro.foto" alt="{{ suministro.descripcion }}" class="suministro-img">
+    </div>
+</div>
+
+<!-- Si no hay suministros disponibles -->
+<ng-template #noSuministros>
+  <p class="no-suministros">No hay suministros disponibles.</p>
+</ng-template>

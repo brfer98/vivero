@@ -1,0 +1,16 @@
+<div *ngIf="arbolesFlorales.length > 0; else noArbolesFlorales" class="arboles-florales-container">
+    <!-- Recorrer todos los árboles florales y mostrar los datos -->
+    <div *ngFor="let arbol of arbolesFlorales" class="arboles-florales-card">
+      <h3>{{ arbol.descripcion }}</h3>
+      <p><strong>Precio:</strong> ${{ arbol.precio || 'N/A' }}</p>
+      <p><strong>Stock disponible:</strong> {{ arbol.stock }}</p>
+
+      <!-- Mostrar la imagen del árbol floral -->
+      <img [src]="'assets/imagenes/arboles florales/' + arbol.foto" alt="{{ arbol.descripcion }}" class="arboles-florales-img">
+    </div>
+</div>
+
+<!-- Si no hay árboles florales disponibles -->
+<ng-template #noArbolesFlorales>
+  <p class="no-arboles-florales">No hay árboles florales disponibles.</p>
+</ng-template>

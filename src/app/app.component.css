@@ -1,0 +1,8 @@
+app-footer {
+    line-height: 100px;
+    width: 100%;
+}
+:host {
+    display: block;
+    background-color: #f5f5f5;
+}

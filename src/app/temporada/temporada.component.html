@@ -1,0 +1,16 @@
+<div *ngIf="plantasTemporada.length > 0; else noPlantasTemporada" class="temporada-container">
+    <!-- Recorrer todas las plantas de temporada y mostrar los datos -->
+    <div *ngFor="let planta of plantasTemporada" class="temporada-item">
+      <h3>{{ planta.descripcion }}</h3>
+      <p><strong>Precio:</strong> ${{ planta.precio || 'N/A' }}</p>
+      <p><strong>Stock disponible:</strong> {{ planta.stock }}</p>
+  
+      <!-- Mostrar la imagen de la planta de temporada -->
+      <img [src]="'assets/imagenes/temporada/' + planta.estacion + '/' + planta.foto" alt="{{ planta.descripcion }}" class="temporada-img">
+    </div>
+  </div>
+  
+  <!-- Si no hay plantas de temporada disponibles -->
+  <ng-template #noPlantasTemporada>
+    <p class="no-plantas-temporada">No hay plantas de temporada disponibles.</p>
+  </ng-template>

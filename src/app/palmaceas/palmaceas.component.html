@@ -1,0 +1,17 @@
+
+<div *ngIf="palmaceas.length > 0; else noPalmaceas" class="palmaceas-container">
+    <!-- Recorrer todas las coníferas y mostrar los datos -->
+    <div *ngFor="let palmaceas of palmaceas" class="palmaceas-card">
+      <h3>{{ palmaceas.descripcion }}</h3>
+      <p><strong>Precio:</strong> ${{ palmaceas.precio || 'N/A' }}</p>
+      <p><strong>Stock disponible:</strong> {{ palmaceas.stock }}</p>
+  
+      <!-- Mostrar la imagen de la conífera -->
+      <img [src]="'assets/imagenes/palmaceas/' + palmaceas.foto" alt="{{ palmaceas.descripcion }}" class="palmaceas-img">
+    </div>
+  </div>
+  
+  <!-- Si no hay coníferas disponibles -->
+  <ng-template #noPalmaceas>
+    <p class="no-palmaceas">No hay coníferas disponibles.</p>
+  </ng-template>

@@ -1,0 +1,27 @@
+<div class="fondo">
+    <h1>Contacte con nosotros!!</h1>
+
+    <form id="contactForm">
+      <label for="nombre">Nombre: *</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="apellido">Apellido: *</label>
+      <input type="text" id="apellido" name="apellido" required>
+
+      <label for="telefono">Teléfono: *</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="asunto">Asunto: *</label>
+      <input type="text" id="asunto" name="asunto" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="error" class="error-message">
+    Aquellos recuadros que contengan * son obligatorios de rellenar.
+    </div>
+  </div>
+

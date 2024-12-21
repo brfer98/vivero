@@ -1,0 +1,17 @@
+<div *ngIf="figuras.length > 0; else noFiguras" class="figuras-container">
+    <!-- Recorrer todas las figuras y mostrar los datos -->
+    <div *ngFor="let figura of figuras" class="figura-item">
+      <h3>{{ figura.descripcion }}</h3>
+      <p><strong>Precio:</strong> ${{ figura.precio || 'N/A' }}</p>
+      <p><strong>Stock disponible:</strong> {{ figura.stock }}</p>
+      
+      <!-- Mostrar la imagen de la figura -->
+      <img [src]="'assets/imagenes/figuras/' + figura.foto" alt="{{ figura.descripcion }}" class="figura-img">
+    </div>
+  </div>
+  
+  <!-- Si no hay figuras disponibles -->
+  <ng-template #noFiguras>
+    <p>No hay figuras disponibles.</p>
+  </ng-template>
+  

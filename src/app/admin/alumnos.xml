@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+    <alumno>
+        <nombre>Juan Pérez</nombre>
+        <edad>18</edad>
+        <nota>85</nota> <!-- Solo una nota -->
+    </alumno>
+    <alumno>
+        <nombre>María García</nombre>
+        <edad>19</edad>
+        <nota>95</nota> <!-- Solo una nota -->
+    </alumno>
+    <alumno>
+        <nombre>Carlos Ramírez</nombre>
+        <edad>17</edad>
+        <nota>75</nota> <!-- Solo una nota -->
+    </alumno>
+</alumnos>

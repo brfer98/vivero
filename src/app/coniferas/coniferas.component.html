@@ -1,0 +1,16 @@
+<div *ngIf="coniferas.length > 0; else noConiferas" class="coniferas-container">
+  <!-- Recorrer todas las coníferas y mostrar los datos -->
+  <div *ngFor="let conifera of coniferas" class="conifera-card">
+    <h3>{{ conifera.descripcion }}</h3>
+    <p><strong>Precio:</strong> ${{ conifera.precio || 'N/A' }}</p>
+    <p><strong>Stock disponible:</strong> {{ conifera.stock }}</p>
+
+    <!-- Mostrar la imagen de la conífera -->
+    <img [src]="'assets/imagenes/coniferas/' + conifera.foto" alt="{{ conifera.descripcion }}" class="conifera-img">
+  </div>
+</div>
+
+<!-- Si no hay coníferas disponibles -->
+<ng-template #noConiferas>
+  <p class="no-coniferas">No hay coníferas disponibles.</p>
+</ng-template>

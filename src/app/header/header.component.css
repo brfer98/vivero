@@ -1,0 +1,237 @@
+/* Estilos generales del encabezado */
+.encabezado {
+  background-color: #c5ffc7; /* Color de fondo del encabezado */
+  padding: 1rem;
+  border-bottom: 2px solid #000000;
+  transition: all 0.2s ease;
+  font-family: Arial, sans-serif;
+}
+
+.contenedor-fluido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.encabezado-texto {
+  font-size: 1.5rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+.encabezado-texto img {
+  transition: width 0.2s ease, height 0.2s ease, transform 0.3s ease; /* Añadir transición para transformación */
+}
+
+.original-logo {
+  width: 150px;
+  height: 100px;
+}
+
+.small-logo {
+  width: 100px;
+  height: 60px;
+}
+
+.encabezado-colapso {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative; /* Asegura que el icono de sesión se posicione correctamente */
+}
+
+/* Estilos para el menú de navegación */
+.navegacion {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navegacion-item {
+  list-style: none;
+  position: relative;
+  margin: 2rem; /* Asegurar márgenes iguales */
+}
+
+/* Estilo del enlace del menú */
+.navegacion-enlace,
+.dropdown-item {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.1rem; /* Tamaño de fuente reducido */
+  display: block;
+  margin-right: 0; /* Asegurar márgenes consistentes */
+}
+
+.navegacion-enlace:hover,
+.dropdown-item:hover {
+  color: #333333;
+  background-color: #A5D6A7;
+}
+
+.activo {
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Estilos para el menú desplegable principal */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #bcfabe;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  min-width: 15rem; /* Ajuste de ancho para el menú */
+  padding: 0;
+  margin: 0; /* Asegurar que no haya márgenes adicionales */
+}
+
+/* Mostrar el menú desplegable principal al pasar el ratón sobre el elemento */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Estilos para los submenús dentro del menú desplegable */
+.dropdown-item {
+  position: relative; /* Posicionar el submenú relativo al ítem */
+}
+
+.dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%; /* Mostrar el submenú a la derecha del menú principal */
+  top: 0;
+  background-color: #bcfabe;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  min-width: 12rem;
+  padding: 0;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  margin: 0; /* Eliminar márgenes */
+}
+
+/* Mostrar el submenú cuando se pasa el ratón sobre el ítem del menú principal */
+.dropdown-item:hover .dropdown-submenu {
+  display: block;
+}
+
+.dropdown-submenu .dropdown-item {
+  padding: 0.5rem 1rem;
+}
+
+/* Estilos para el encabezado fijo */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #c5ffc7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  height: 90px; /* Altura más pequeña para el header fijo */
+  padding: 0 1rem;
+}
+
+.fixed-header .encabezado-texto img {
+  width: 100px; /* Tamaño del logo reducido en el header fijo */
+  height: 60px;
+}
+
+/* Estilos del icono de sesión */
+.icono-sesion {
+  position: absolute;
+  top: -10px; /* Mueve el icono hacia arriba desde el contenedor */
+  right: -10px; /* Mueve el icono hacia la derecha desde el contenedor */
+  margin: 0; /* Elimina el margen alrededor del icono */
+}
+
+.icono-sesion img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  transition: transform 0.3s ease; /* Transición para el hover */
+}
+
+.icono-sesion img:hover {
+  transform: scale(1.1); /* Aumentar el tamaño al 110% al hacer hover */
+}
+
+/* Media Queries */
+
+/* Para pantallas con un ancho máximo de 1066px */
+@media all and (max-width: 1066px) {
+  .encabezado-texto {
+    font-size: 1.25rem;
+  }
+
+  .navegacion-enlace,
+  .dropdown-item {
+    font-size: 1rem; /* Tamaño de fuente más pequeño para pantallas medianas */
+  }
+
+  .navegacion-item {
+    margin: 1rem;
+  }
+}
+
+/* Para pantallas con un ancho máximo de 768px */
+@media all and (max-width: 768px) {
+  .navegacion {
+    display: flex; /* Mantener el diseño en flexbox */
+    flex-wrap: wrap; /* Permitir el ajuste de los elementos */
+    justify-content: space-between; /* Distribuir el espacio entre los elementos */
+    margin-left: 2rem;
+  }
+
+  .navegacion-item {
+    flex-basis: calc(50% - 1em); /* Ocupa la mitad del contenedor menos el margen */
+    margin: 0.5em; /* Espaciado entre los elementos */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+  }
+
+  .navegacion-enlace,
+  .dropdown-item {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+  }
+
+  .icono-sesion {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Para pantallas con un ancho máximo de 544px */
+@media all and (max-width: 544px) {
+  .encabezado-texto {
+    font-size: 1rem;
+  }
+
+  .navegacion-enlace,
+  .dropdown-item {
+    font-size: 0.85rem; /* Tamaño de fuente aún más pequeño para pantallas muy pequeñas */
+  }
+
+  .encabezado-texto img {
+    width: 100px;
+    height: 60px;
+  }
+
+  .navegacion {
+    align-items: flex-start;
+  }
+
+  .encabezado {
+    padding: 0.5rem;
+  }
+
+  .icono-sesion {
+    width: 20px;
+    height: 20px;
+    top: -5px; /* Ajustar la posición superior para pantallas más pequeñas */
+    right: -5px; /* Ajustar la posición derecha para pantallas más pequeñas */
+  }
+}

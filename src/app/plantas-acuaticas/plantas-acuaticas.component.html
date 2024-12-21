@@ -1,0 +1,23 @@
+<div *ngIf="plantas_acuaticas.length > 0; else noPlantasAcuaticas" class="plantas-acuaticas-container">
+  <!-- Recorrer todas las plantas acuáticas y mostrar los datos -->
+  <div *ngFor="let planta of plantas_acuaticas" class="planta-acuatica-card" (click)="toggleFlip($event)">
+    <div class="card-inner">
+      <!-- Parte delantera de la tarjeta -->
+      <div class="card-front">
+        <h3>{{ planta.descripcion }}</h3>
+        <p><strong>Precio:</strong> ${{ planta.precio || 'N/A' }}</p>
+        <p><strong>Stock disponible:</strong> {{ planta.stock }}</p>
+        <img [src]="'assets/imagenes/plantas/acuaticas/' + planta.foto" alt="{{ planta.descripcion }}" class="planta-acuatica-img">
+      </div>
+      <!-- Parte trasera de la tarjeta -->
+      <div class="card-back">
+        <!-- Aquí puedes agregar el contenido que deseas mostrar en la parte trasera -->
+        <p>Detalles adicionales sobre {{ planta.descripcion }}.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noPlantasAcuaticas>
+  <p class="no-plantas-acuaticas">No hay plantas acuáticas disponibles.</p>
+</ng-template>

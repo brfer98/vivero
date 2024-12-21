@@ -1,0 +1,54 @@
+<nav [class]="headerClass">
+  <div class="contenedor-fluido">
+    <a class="encabezado-texto" href="#">
+      <img [class]="logoClass" src="assets/imagenes/Captura logo.png" alt="Instagram">
+    </a>
+    <div class="encabezado-colapso" id="customNavbarContent">
+      <ul class="navegacion">
+        <li class="navegacion-item dropdown">
+          <a class="navegacion-enlace activo" aria-current="page" routerLink="#">Nuestra vegetación</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/coniferas">Coníferas</a>
+            <div class="dropdown-item dropdown">
+              <a class="navegacion-enlace" routerLink="/arboles">Árboles</a>
+              <div class="dropdown-submenu">
+                <a class="dropdown-item" routerLink="/arboles-frutales">Frutales</a>
+                <a class="dropdown-item" routerLink="/arboles-florales">Florales</a>
+              </div>
+            </div>
+            <a class="dropdown-item" routerLink="/palmaceas">Palmáceas</a>
+            <div class="dropdown-item dropdown">
+              <a class="navegacion-enlace" routerLink="/plantas">Plantas</a>
+              <div class="dropdown-submenu">
+                <a class="dropdown-item" routerLink="/plantas_secano">Secano</a>
+                <a class="dropdown-item" routerLink="/plantas_acuaticas">Acuáticas</a>
+                <a class="dropdown-item" routerLink="/plantas_trepadoras">Trepadoras</a>
+                <a class="dropdown-item" routerLink="/plantas_semillas">Semillas</a>
+              </div>
+            </div>
+            <a class="dropdown-item" routerLink="/temporada">De Temporada</a>
+          </div>
+        </li>
+        <li class="navegacion-item dropdown">
+          <a class="navegacion-enlace activo" aria-current="page">Nuestros productos</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/suministros">Suministros</a>
+            <a class="dropdown-item" routerLink="/herramientas">Herramientas</a>
+            <a class="dropdown-item" routerLink="/decoracion">Decoracion</a>
+          </div> 
+        </li>
+        <li class="navegacion-item">
+          <a class="navegacion-enlace activo" aria-current="page" routerLink="/talleres">Talleres/charlas</a>
+        </li>
+        <li class="navegacion-item">
+          <a class="navegacion-enlace activo" aria-current="page" routerLink="/contacto">Contacto</a>
+        </li>
+      </ul>
+      <!-- Icono de sesión posicionado arriba a la derecha -->
+      <a class="icono-sesion" routerLink="/admin">
+        <img src="assets/imagenes/sesion.png" alt="Sesión">
+      </a>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

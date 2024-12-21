@@ -1,0 +1,17 @@
+<div *ngIf="herramientas.length > 0; else noHerramientas" class="herramientas-container">
+    <!-- Recorrer todas las herramientas y mostrar los datos -->
+    <div *ngFor="let herramienta of herramientas" class="herramienta-card">
+      <h3>{{ herramienta.descripcion }}</h3>
+      <p><strong>Precio:</strong> ${{ herramienta.precio || 'N/A' }}</p>
+      <p><strong>Stock disponible:</strong> {{ herramienta.stock }}</p>
+  
+      <!-- Mostrar la imagen de la herramienta -->
+      <img [src]="'assets/imagenes/herramientas/' + herramienta.foto" alt="{{ herramienta.descripcion }}" class="herramienta-img">
+    </div>
+</div>
+
+<!-- Si no hay herramientas disponibles -->
+<ng-template #noHerramientas>
+  <p class="no-herramientas">No hay herramientas disponibles.</p>
+</ng-template>
+

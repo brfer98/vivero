@@ -1,0 +1,213 @@
+<header>
+    <h1>Admin Panel</h1>
+</header>
+
+<nav>
+    <button (click)="toggleFormulario_Estacion()">Cambio de Estación</button>
+    <button (click)="toggleFormulario_Popular()">Cambio de popularidad</button>
+    <button (click)="toggleFormulario_tabla()">Cambio de datos en tabla</button>
+
+</nav>
+
+<main>
+    <div *ngIf="mostrarFormulario_Estacion">
+        <h2>Cambio de Estación</h2>
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <label for="estacion">Seleccione la estación:</label>
+            <select id="estacion" name="estacion" (change)="onEstacionChange($event)">
+                <option>Seleccione la estación</option>
+                <option value="primavera-verano">Primavera - Verano</option>
+                <option value="otoño-invierno">Otoño - Invierno</option>
+            </select>
+            <button type="submit">Enviar</button>
+        </form>
+        <div *ngIf="message">{{ message }}</div>
+    </div>
+    
+
+    <div *ngIf="mostrarOpciones_tablas">
+        <form (ngSubmit)="onSubmititem()"> <!-- Llamada a 'onSubmit' -->
+          <label>Selecciona la tabla:</label>
+          <select [(ngModel)]="tablaSeleccionada" name="tablaSeleccionada" required>
+            <option value="">Elija tabla</option>
+            <option value="coniferas">Coníferas</option>
+            <option value="palmaceas">Palmáceas</option>
+            <option value="suministros">Suministros</option>
+            <option value="herramientas">Herramientas</option>
+            <option value="todas_las_figuras">Decoración</option>
+            <option value="temporada">Temporada</option>
+            <option value="arboles_florales">arboles_florales</option>
+          </select>
+          <input type="submit" value="Cargar Datos">
+        </form>
+      </div>
+      
+      <!-- Mostrar los datos recibidos -->
+      <div *ngIf="items.length > 0">
+        <h2>Datos de la tabla {{ tablaSeleccionada }}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>URL</th>
+                    <th>POPULAR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{ item.descripcion }}</td>
+                    <td>${{ item.precio || 'N/A' }}</td>
+                    <td>{{ item.stock }}</td>
+                    <td>{{ item.foto }}</td>
+                    <td>
+                        <input type="checkbox" [(ngModel)]="item.popular" [ngModelOptions]="{ standalone: true }" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+              <!-- Mensaje si no hay datos -->
+      <div *ngIf="items.length === 0 && tablaSeleccionada">
+        <p>No hay datos disponibles para la tabla seleccionada.</p>
+      </div>
+    </div>
+    
+      
+
+      
+
+    
+
+    <div *ngIf="mostrarOpciones_Popularidad">
+        <h2>Cambio de popularidad</h2>
+        <form>
+            <button (click)="togglePopularidad_Plantas()">Plantas</button>
+            <button (click)="togglePopularidad_Figuras()">Figuras</button>
+            <button (click)="togglePopularidad_Herramientas()">Herramientas</button>
+        </form>
+    </div>
+
+
+
+
+    <div *ngIf="mostrarOpciones_Popularidad_Plantas">
+        <div *ngIf="plantasTemporada.length > 0; else noPlantasTemporada" class="temporada-container">
+            <h2>Cambio de popularidad en plantas</h2>
+            <form (ngSubmit)="onSubmit2()">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>URL</th>
+                            <th>POPULAR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let planta of plantasTemporada">
+                            <td>{{ planta.descripcion }}</td>
+                            <td>${{ planta.precio || 'N/A' }}</td>
+                            <td>{{ planta.stock }}</td>
+                            <td>{{ planta.foto }}</td>
+                            <td>
+                                <input type="checkbox" [(ngModel)]="planta.popular" [ngModelOptions]="{ standalone: true }" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <ng-template #noPlantasTemporada>
+            <p class="no-plantas-temporada">No hay plantas de temporada disponibles.</p>
+        </ng-template>
+        <div *ngIf="message">{{ message }}</div>
+    </div>
+    
+    
+
+
+
+
+    
+    <div *ngIf="mostrarOpciones_Popularidad_Figuras">
+        <div *ngIf="figuras.length > 0; else noFiguras" class="figuras-container">
+            <h2>Cambio de popularidad en figuras</h2>
+            <form (ngSubmit)="onSubmit3()">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Imagen</th>
+                            <th>POPULAR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let figura of figuras">
+                            <td>{{ figura.descripcion }}</td>
+                            <td>${{ figura.precio || 'N/A' }}</td>
+                            <td>{{ figura.stock }}</td>
+                            <td>{{ figura.descripcion }}</td>
+                            <td>
+                                <input type="checkbox" [(ngModel)]="figura.popular" [ngModelOptions]="{ standalone: true }" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <ng-template #noFiguras>
+            <p class="no-figuras">No hay figuras disponibles.</p>
+        </ng-template>
+        <div *ngIf="message">{{ message }}</div>
+    </div>
+    
+
+
+
+
+    <div *ngIf="mostrarOpciones_Popularidad_Herramientas">
+        <div *ngIf="herramientas.length > 0; else noHerramientas" class="herramientas-container">
+            <h2>Cambio de popularidad en herramientas</h2>
+            <form (ngSubmit)="onSubmitHerramientas()">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Imagen</th>
+                            <th>POPULAR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let herramienta of herramientas">
+                            <td>{{ herramienta.descripcion }}</td>
+                            <td>${{ herramienta.precio || 'N/A' }}</td>
+                            <td>{{ herramienta.stock }}</td>
+                            <td>{{ herramienta.descripcion }}</td>
+                            <td>
+                                <input type="checkbox" [(ngModel)]="herramienta.popular" [ngModelOptions]="{ standalone: true }" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <ng-template #noHerramientas>
+            <p class="no-herramientas">No hay herramientas disponibles.</p>
+        </ng-template>
+        <div *ngIf="message">{{ message }}</div>
+    </div>
+    
+
+
+
+
+</main>

@@ -1,0 +1,17 @@
+<div *ngIf="plantas_secano.length > 0; else noPlantasSecano" class="plantas-secano-container">
+    <!-- Recorrer todas las plantas de secano y mostrar los datos -->
+    <div *ngFor="let planta of plantas_secano" class="planta-secano-card">
+      <h3>{{ planta.descripcion }}</h3>
+      <p><strong>Precio:</strong> ${{ planta.precio || 'N/A' }}</p>
+      <p><strong>Stock disponible:</strong> {{ planta.stock }}</p>
+  
+      <!-- Mostrar la imagen de la planta de secano -->
+      <img [src]="'assets/imagenes/plantas/secano/' + planta.foto" alt="{{ planta.descripcion }}" class="planta-secano-img">
+    </div>
+  </div>
+  
+  <!-- Si no hay plantas de secano disponibles -->
+  <ng-template #noPlantasSecano>
+    <p class="no-plantas-secano">No hay plantas de secano disponibles.</p>
+  </ng-template>
+  
