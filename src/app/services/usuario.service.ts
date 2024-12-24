@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiUrl = 'http://localhost/prueba/api.php'; 
+  //private apiUrl = 'http://localhost/prueba/api.php'; 
+  private apiUrl = 'http://localhost/vivero/prueba/api.php'; 
+
 
   constructor(private http: HttpClient) {}
 
