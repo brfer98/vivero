@@ -3,8 +3,12 @@
     "",
     "\\prueba",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\admin",
+    "\\src\\app\\coniferas",
+    "\\src\\app\\footer",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\package-lock.json",
+  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }

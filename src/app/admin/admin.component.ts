@@ -61,7 +61,7 @@ export class AdminComponent {
   }
 
 
-  
+  //sirve para ocultar los cuadros de las opciones del admin//
 
   toggleFormulario_Popular() {
     this.mostrarOpciones_Popularidad = !this.mostrarOpciones_Popularidad; 
