@@ -15,11 +15,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Volcando estructura de base de datos para vivero
-CREATE DATABASE IF NOT EXISTS `vivero` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-USE `vivero`;
+-- Volcando estructura de base de datos para vivero-con-login
+CREATE DATABASE IF NOT EXISTS `vivero-con-login` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+USE `vivero-con-login`;
 
--- Volcando estructura para tabla vivero.arboles_florales
+-- Volcando estructura para tabla vivero-con-login.arboles_florales
 CREATE TABLE IF NOT EXISTS `arboles_florales` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `arboles_florales` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.arboles_florales: ~16 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.arboles_florales: ~16 rows (aproximadamente)
 INSERT INTO `arboles_florales` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Acacia blanca', 5, 35, 'acacia-blanca.jpg'),
 	('Altea azul', 5, 35, 'altea-azul.jpg'),
@@ -47,7 +47,7 @@ INSERT INTO `arboles_florales` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Magnolia x soulangeana', 5, 35, 'magnolia x soulangeana.jpg'),
 	('Magnolia x soulangeana rustica rubra', 5, 35, 'magnolia x soulangeana -rustica rubra.jpg');
 
--- Volcando estructura para tabla vivero.arboles_frutales
+-- Volcando estructura para tabla vivero-con-login.arboles_frutales
 CREATE TABLE IF NOT EXISTS `arboles_frutales` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `arboles_frutales` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.arboles_frutales: ~16 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.arboles_frutales: ~16 rows (aproximadamente)
 INSERT INTO `arboles_frutales` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Almendro', 7, 20, 'almendro.png'),
 	('Castano común', 7, 20, 'castano-comun.webp'),
@@ -75,7 +75,7 @@ INSERT INTO `arboles_frutales` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Nogal', 7, 20, 'nogal.webp'),
 	('Olivo', 7, 20, 'olivo-copa.webp');
 
--- Volcando estructura para tabla vivero.coniferas
+-- Volcando estructura para tabla vivero-con-login.coniferas
 CREATE TABLE IF NOT EXISTS `coniferas` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `coniferas` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.coniferas: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.coniferas: ~8 rows (aproximadamente)
 INSERT INTO `coniferas` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Chamaecyparis Ellwoodii', 7, 25, 'Chamaecyparis Ellwoodii.jpg'),
 	('Cipres Totem', 7, 25, 'Cipres Totem.jpg'),
@@ -95,17 +95,17 @@ INSERT INTO `coniferas` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Pino Nigra', 7, 25, 'Pino Nigra.webp'),
 	('Thuya Danica', 7, 25, 'Thuya Danica.jpg');
 
--- Volcando estructura para tabla vivero.estacion
+-- Volcando estructura para tabla vivero-con-login.estacion
 CREATE TABLE IF NOT EXISTS `estacion` (
   `ciclo` varchar(50) NOT NULL,
   PRIMARY KEY (`ciclo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.estacion: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.estacion: ~1 rows (aproximadamente)
 INSERT INTO `estacion` (`ciclo`) VALUES
 	('otoño-invierno');
 
--- Volcando estructura para tabla vivero.figuras
+-- Volcando estructura para tabla vivero-con-login.figuras
 CREATE TABLE IF NOT EXISTS `figuras` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `figuras` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.figuras: ~19 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.figuras: ~19 rows (aproximadamente)
 INSERT INTO `figuras` (`descripcion`, `precio`, `stock`, `foto`, `popular`) VALUES
 	('Aguila', 350, 15, '350-aguila.jpg', 'no'),
 	('Aguila 2', 195, 15, '195-aguila.jpg', 'no'),
@@ -137,7 +137,7 @@ INSERT INTO `figuras` (`descripcion`, `precio`, `stock`, `foto`, `popular`) VALU
 	('Pato sobre piedras', 100, 15, '100-pato.jpg', 'no'),
 	('Tortuga grande', 32, 15, '32-TORTUGA-GRANDE.jpg', 'no');
 
--- Volcando estructura para tabla vivero.herramientas
+-- Volcando estructura para tabla vivero-con-login.herramientas
 CREATE TABLE IF NOT EXISTS `herramientas` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `herramientas` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.herramientas: ~18 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.herramientas: ~18 rows (aproximadamente)
 INSERT INTO `herramientas` (`descripcion`, `precio`, `stock`, `foto`, `popular`) VALUES
 	('azada', 1, 1, 'azada-42.webp', 'no'),
 	('azada con rastrillo', 1.4, 30, 'azada con rastrillo-24.jpg', 'no'),
@@ -168,7 +168,7 @@ INSERT INTO `herramientas` (`descripcion`, `precio`, `stock`, `foto`, `popular`)
 	('Tijera de poda de 2 manos 44cm', 10, 40, 'Tijera de poda de 2 manos 44cm 10€.webp', 'no'),
 	('Tijera de poda de una mano 20cm', 5, 40, 'Tijera de poda de una mano 20cm 5€.webp', 'no');
 
--- Volcando estructura para tabla vivero.palmaceas
+-- Volcando estructura para tabla vivero-con-login.palmaceas
 CREATE TABLE IF NOT EXISTS `palmaceas` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `palmaceas` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.palmaceas: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.palmaceas: ~5 rows (aproximadamente)
 INSERT INTO `palmaceas` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Chamaerops excelsa', 8, 30, 'Chamaerops excelsa.jpg'),
 	('Cordyline RedStar', 8, 25, 'Cordyline RedStar.jpg'),
@@ -185,7 +185,7 @@ INSERT INTO `palmaceas` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Phoenix Canariensis', 8, 25, 'Phoenix Canariensis.jpg'),
 	('Yucca Elegans', 8, 25, 'Yucca Elegans.jpg');
 
--- Volcando estructura para tabla vivero.plantas_acuaticas
+-- Volcando estructura para tabla vivero-con-login.plantas_acuaticas
 CREATE TABLE IF NOT EXISTS `plantas_acuaticas` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -194,14 +194,14 @@ CREATE TABLE IF NOT EXISTS `plantas_acuaticas` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.plantas_acuaticas: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.plantas_acuaticas: ~4 rows (aproximadamente)
 INSERT INTO `plantas_acuaticas` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Equisetum hyemale', 4, 20, 'EQUISETUM HYEMALE.jpg'),
 	('Nenufar blanco', 4, 20, 'NENUFAR BLANCO.jpg'),
 	('Nenufar nymphaea', 4, 20, 'NENUFAR NYMPHAEA.jpg'),
 	('Papyrua cyperus', 4, 20, 'PAPYRUS CYPERUS.jpg');
 
--- Volcando estructura para tabla vivero.plantas_secano
+-- Volcando estructura para tabla vivero-con-login.plantas_secano
 CREATE TABLE IF NOT EXISTS `plantas_secano` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `plantas_secano` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.plantas_secano: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.plantas_secano: ~8 rows (aproximadamente)
 INSERT INTO `plantas_secano` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Aloe vera', 4, 20, 'Aloe vera.avif'),
 	('Aylostera (Rebutia muscula)', 4, 20, 'Aylostera (Rebutia muscula).webp'),
@@ -221,7 +221,7 @@ INSERT INTO `plantas_secano` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Portulacaria', 4, 20, 'Portulacaria.jpg'),
 	('Violacea (Acanthocalycium spiniflorum)', 4, 20, 'Violacea (Acanthocalycium spiniflorum).jpg');
 
--- Volcando estructura para tabla vivero.plantas_semillas
+-- Volcando estructura para tabla vivero-con-login.plantas_semillas
 CREATE TABLE IF NOT EXISTS `plantas_semillas` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `plantas_semillas` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.plantas_semillas: ~18 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.plantas_semillas: ~18 rows (aproximadamente)
 INSERT INTO `plantas_semillas` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Semillas de Calabacín', 1.4, 40, 'Semillas de Calabacín.webp'),
 	('Semillas de Calabaza Halloween', 1.4, 40, 'Semillas de Calabaza Halloween.webp'),
@@ -251,7 +251,7 @@ INSERT INTO `plantas_semillas` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Semillas de Zanahoria', 1.4, 40, 'Semillas de Zanahoria .webp'),
 	('Semillas ecológicas de Calabaza butternut ', 1.6, 40, 'Semillas ecológicas de Calabaza butternut 1.60€.webp');
 
--- Volcando estructura para tabla vivero.plantas_trepadoras
+-- Volcando estructura para tabla vivero-con-login.plantas_trepadoras
 CREATE TABLE IF NOT EXISTS `plantas_trepadoras` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -260,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `plantas_trepadoras` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.plantas_trepadoras: ~14 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.plantas_trepadoras: ~14 rows (aproximadamente)
 INSERT INTO `plantas_trepadoras` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Allamanda amarilla', 4, 20, 'Allamanda amarilla.jpg'),
 	('Buganvilla sanderiana', 4, 20, 'buganvilla-sanderiana.jpg'),
@@ -277,7 +277,7 @@ INSERT INTO `plantas_trepadoras` (`descripcion`, `precio`, `stock`, `foto`) VALU
 	('Plumbago', 4, 20, 'Plumbago.webp'),
 	('Rosal grandiflora', 4, 20, 'rosal-grandiflora.webp');
 
--- Volcando estructura para tabla vivero.suministros
+-- Volcando estructura para tabla vivero-con-login.suministros
 CREATE TABLE IF NOT EXISTS `suministros` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -286,7 +286,7 @@ CREATE TABLE IF NOT EXISTS `suministros` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.suministros: ~11 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.suministros: ~11 rows (aproximadamente)
 INSERT INTO `suministros` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Fertilizante de plantas liquido', 11, 35, 'Fertilizante de plantas liquido.jpg'),
 	('Humus de lombriz puro', 15, 35, 'Humus de lombriz puro.jpg'),
@@ -300,7 +300,7 @@ INSERT INTO `suministros` (`descripcion`, `precio`, `stock`, `foto`) VALUES
 	('Sustrato para huerto y frutales', 15, 35, 'Sustrato para huerto y frutales.webp'),
 	('Sustrato Universal 80L', 22, 35, 'Sustrato Universal 80L.jpg');
 
--- Volcando estructura para tabla vivero.temporada
+-- Volcando estructura para tabla vivero-con-login.temporada
 CREATE TABLE IF NOT EXISTS `temporada` (
   `descripcion` varchar(50) NOT NULL,
   `precio` double DEFAULT NULL,
@@ -311,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `temporada` (
   PRIMARY KEY (`descripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.temporada: ~22 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.temporada: ~22 rows (aproximadamente)
 INSERT INTO `temporada` (`descripcion`, `precio`, `stock`, `foto`, `popular`, `estacion`) VALUES
 	('Amaranto globoso', 6, 30, 'Amaranto globoso.webp', 'no', 'otoño-invierno'),
 	('Begonia', 6, 30, 'Begonia.jpg', 'sí', 'otoño-invierno'),
@@ -336,19 +336,19 @@ INSERT INTO `temporada` (`descripcion`, `precio`, `stock`, `foto`, `popular`, `e
 	('Surfinia', 6, 30, 'Surfinia.jpg', 'no', 'primavera-verano'),
 	('Tulipanes', 6, 30, 'tulipanes.jpg', 'no', 'otoño-invierno');
 
--- Volcando estructura para tabla vivero.tipo_usuario
+-- Volcando estructura para tabla vivero-con-login.tipo_usuario
 CREATE TABLE IF NOT EXISTS `tipo_usuario` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_tipo_usuario` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.tipo_usuario: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.tipo_usuario: ~2 rows (aproximadamente)
 INSERT INTO `tipo_usuario` (`ID`, `nombre_tipo_usuario`) VALUES
 	(1, 'admin'),
 	(2, 'cliente');
 
--- Volcando estructura para tabla vivero.usuarios
+-- Volcando estructura para tabla vivero-con-login.usuarios
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `tipo_usuario` int(11) NOT NULL,
@@ -361,7 +361,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   CONSTRAINT `fk_tipo_usuario` FOREIGN KEY (`tipo_usuario`) REFERENCES `tipo_usuario` (`ID`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla vivero.usuarios: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla vivero-con-login.usuarios: ~2 rows (aproximadamente)
 INSERT INTO `usuarios` (`ID`, `tipo_usuario`, `nombre_usuario`, `contraseña`, `email`, `telefono`) VALUES
 	(1, 1, 'admin', '1234', NULL, NULL),
 	(2, 2, 'bruno', '1234', NULL, NULL);
