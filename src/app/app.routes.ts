@@ -17,6 +17,8 @@ import { PlantasTrepadorasComponent } from './plantas-trepadoras/plantas-trepado
 import { AdminComponent } from './admin/admin.component';
 import { PlantasSemillasComponent } from './plantas-semillas/plantas-semillas.component';
 import { HerramientasComponent } from './herramientas/herramientas.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
 
 
 export const routes: Routes = [
@@ -38,6 +40,10 @@ export const routes: Routes = [
     {path: 'plantas_trepadoras', component: PlantasTrepadorasComponent},
     {path: 'plantas_semillas', component: PlantasSemillasComponent},
     {path: 'herramientas', component: HerramientasComponent},
-    {path: 'admin', component: AdminComponent}
+    {path: 'admin', component: AdminComponent},
+
+    //para el login
+    {path: 'login', component: LoginComponent},
+    {path: 'login', component: RegisterComponent}
 
 ];

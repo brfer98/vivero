@@ -1,0 +1,15 @@
+<form [formGroup]="myForm" (ngSubmit)="submitFormulario()">
+    <!--usuario-->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input formControlName="usuario" type="text" id="userName" class="form-control" placeholder="Nombre usuario"/>
+    </div>
+  
+    <!--contraseña-->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input formControlName="password" type="password" id="password" class="form-control" placeholder="Contraseña" />
+    </div>
+  
+    <!--inicar sesion-->
+    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block mb-4">Inicar Sesión</button>
+
+</form>
