@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import { LoginService } from '../../services/auth/login.service';
+import { LoginRequest } from '../../services/auth/loginRequest';
 
 @Component({
     selector: 'app-login',
@@ -9,30 +12,53 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
     styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
-    
-    public myForm!:FormGroup;
 
-    constructor(private fb:FormBuilder){}
+        loginForm = this.formBuilder.group({
+            email: ['yo@gmail.com', [Validators.required, Validators.email]],
+            password: ['', Validators.required]
+        })
 
-    ngOnInit(): void {
-        this.myForm = this.createMyForm();
-    }
+        constructor(private formBuilder : FormBuilder, private router: Router, private loginService:LoginService){ }
 
-    private createMyForm():FormGroup{
-        return this.fb.group({
-            usuario: [],
-            password: []
-        });
-    }
+        ngOnInit(): void{
 
-    public submitFormulario(){
-        if(this.myForm.invalid){
-            return
         }
 
-        alert("se va a envair el fomrulario");
-        console.log(this.myForm.value);
-    }
+        get email(){
+            return this.loginForm.controls.email;
+        }
+        get password(){
+            return this.loginForm.controls.password;
+        }
+        
+        //cuando se presione INICIAR SESION pasara esto
+        login(){
+            if(this.loginForm.valid){
+                //llamar al servicio
+                this.loginService.login(this.loginForm.value as LoginRequest).subscribe({
+                    //next especifica los datos que vamos a recibir
+                    next: (userData) => {
+                        //aqui ponemos que hacemos al recibir esos datos
+                        console.log(userData);
+                    },
+                    error: (errorData) => {
+                        console.log(errorData);
+                    },
+                    complete: () => {
+                        console.info("login completo");
+                    }
+                });
 
+                //pasamos al siguiente componente
+                this.router.navigateByUrl('/');
+
+                //reseteamos el formulario
+                this.loginForm.reset();
+            }
+            else{
+                alert("error al ingresar los datos");
+                this.loginForm.markAllAsTouched();
+            }
+        }
 
 }
